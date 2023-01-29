@@ -1,19 +1,24 @@
 
-import './App.css';
-import Header from './Components/Header';
-import Select from "./Components/Option-currency";
-import ResultGetCurrency from "./Components/Get-currency";
-import Currencies from './Components/Services/FetchCurrencies';
 
+import Header from './Components/Header';
+import InputCurrency from "./Components/Currencies/Input";
+import SelectCurrency from "./Components/Currencies/SelectCurrency";
+import ButtonCurrency from "./Components/Button/ButtongetCuurency";
+import Preloader from "./Components/Preloader/loader";
+import AddPositiveValueOfTheNumber from "./Components/Currencies/addPositiveValueOfTheNumber";
+import Currencies from "./Components/Services/FetchCurrencies";
 
 function App() {
   return (
     <div className="App">
     <Header />
-    <Select />
-    <ResultGetCurrency/>
-    <Currencies/>
-    
+   <Currencies/>
+
+    <InputCurrency/>
+    <SelectCurrency/>
+    <ButtonCurrency/>
+    <Preloader/>
+    <AddPositiveValueOfTheNumber/>
     </div>
   );
 }

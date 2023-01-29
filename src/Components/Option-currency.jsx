@@ -1,4 +1,4 @@
-import React from "react"
+/*import React from "react"
 
 export default function Select() {
     return (
@@ -18,4 +18,4 @@ export default function Select() {
     </div>
 
   );
-}
+}*/

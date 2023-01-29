@@ -1,18 +1,49 @@
-  const fetchData = useCallback (async function loadData() {
-    preloaderOn();
+
+const url = "http://api.nbp.pl/api/exchangerates/tables/A/?format=json%22";
+const fetchCurrencies = 
+  fetch(url)
+  .then(resp => resp.json())
+  .catch(err => console.log(err));
+
+export { fetchCurrencies };
+
+
+
+
+
+
+
+
+/*import { useConnections } from "react";
+import { useCallback } from "react";
+  async function loadData() {
+    //preloaderOn();
     try {
       const data = await fetch(
         "https://api.nbp.pl/api/exchangerates/tables/A/?format=json%22"
       );
-      //return await data.json();
-      const json = await data.json();
-      setData(json);
-    } 
-    catch (err) {
-      console.error(err);
-    } 
-    finally {
+      return await data.json();
+      /*const json = await data.json();
+      setDataState(json);*/
+    //} 
+    //catch (err) {
+    /*  console.error(err);
+    } */
+    /*finally {
       preloaderOff();
-    }   loadData();
-  },[])
-  export default fetchData;
+    }  
+  }*/ 
+  /* const FetchData = ()=>{
+    const { makeRequest } = useConnections();
+
+    const callback = useCallback(async()=>
+    {
+        const response = await loadData();
+        return { body: response.body };
+    }
+    , [makeRequest])
+    return {callback};
+   } 
+  
+  export default FetchData;*/
+
