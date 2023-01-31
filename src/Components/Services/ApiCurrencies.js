@@ -1,18 +1,11 @@
+const url = "https://api.nbp.pl/api/exchangerates/tables/A/?format=json%22";
 
-const url = "http://api.nbp.pl/api/exchangerates/tables/A/?format=json%22";
-const fetchCurrencies = 
-  fetch(url)
-  .then(resp => resp.json())
-  .catch(err => console.log(err));
+const fetchCurrencies = fetch(url)
+  .then((resp) => resp.json())
+  .then((res) => res[0].rates)
+  .catch((err) => console.log(err));
 
 export { fetchCurrencies };
-
-
-
-
-
-
-
 
 /*import { useConnections } from "react";
 import { useCallback } from "react";
@@ -25,15 +18,15 @@ import { useCallback } from "react";
       return await data.json();
       /*const json = await data.json();
       setDataState(json);*/
-    //} 
-    //catch (err) {
-    /*  console.error(err);
+//}
+//catch (err) {
+/*  console.error(err);
     } */
-    /*finally {
+/*finally {
       preloaderOff();
     }  
-  }*/ 
-  /* const FetchData = ()=>{
+  }*/
+/* const FetchData = ()=>{
     const { makeRequest } = useConnections();
 
     const callback = useCallback(async()=>
@@ -46,4 +39,3 @@ import { useCallback } from "react";
    } 
   
   export default FetchData;*/
-

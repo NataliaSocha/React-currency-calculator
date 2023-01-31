@@ -1,24 +1,24 @@
 import { useEffect, useState } from "react";
 import { fetchCurrencies } from "./ApiCurrencies";
 import SelectCurrency from "../Currencies/SelectCurrency";
+
 const Currencies = () => {
-    const [datastate, setDataState] = useState([])
+  const [dataState, setDataState] = useState([]);
+  console.log("dataState", dataState);
 
   useEffect(() => {
-    fetchCurrencies.then(data => {
-        
-        setDataState(data[0].rates);
-        //console.log(data[0].rates);
-      });
+    fetchCurrencies.then((data) => {
+      setDataState(data);
+    });
   }, []);
-  return <div>
-
-    <SelectCurrency datastate= {datastate} />
-  </div>;
+  return (
+    <div>
+      <SelectCurrency dataState={dataState} />
+    </div>
+  );
 };
 
 export default Currencies;
-
 
 /*import FetchData from "./ApiCurrencies";
 import {useState, useEffect } from "react";
@@ -38,8 +38,7 @@ useEffect(() => {
 
 }*/
 
-    
-         /*function CurrencyInput(props){
+/*function CurrencyInput(props){
            return(
             <section>
      <div className="content">
@@ -61,8 +60,6 @@ useEffect(() => {
        /*<option value="USD"><span className="currency">USD</span>💵</option>
        <option value="EUR"><span className="currency">EUR</span>💶</option>
        <option value="CHF"><span className="currency">CHF</span>💴</option> */
-        
-  
 
 /*const selectList = document.querySelector(".form-select");
 const input = document.querySelector("#inputCurrency");
@@ -106,27 +103,10 @@ export default Currencies
 
 */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*btn.addEventListener("click", () => {
     
   });*/
-  /*const Currencies = () => {
+/*const Currencies = () => {
     const [data, setData] = useState();
     useEffect(() => {
         fetchData(
