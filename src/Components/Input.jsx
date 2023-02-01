@@ -1,8 +1,4 @@
-import { useState } from "react";
-
-function InputCurrency() {
-  const [currencyNumber, setCurrencyNumber] = useState(0);
-
+function InputCurrency({ currencyNumber, setCurrencyNumber }) {
   return (
     <div className="content">
       <input

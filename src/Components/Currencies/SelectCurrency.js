@@ -1,8 +1,6 @@
 import "../Services/FetchCurrencies";
 import React from "react";
 
-const initialState = "USD";
-
 function SelectCurrency({ dataState, handleChange, selectValue }) {
   if (!dataState) return " ";
   return (
@@ -12,10 +10,7 @@ function SelectCurrency({ dataState, handleChange, selectValue }) {
         className="form-select"
         aria-label="Default select example"
         value={selectValue}
-        onChange={(e) => {
-          console.log(e);
-          return handleChange(e);
-        }}
+        onChange={handleChange}
       >
         {dataState
           .filter((item) => ["USD", "EUR", "CHF"].includes(item.code))
