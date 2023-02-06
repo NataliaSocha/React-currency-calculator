@@ -1,10 +1,11 @@
-function AddPositiveValueOfTheNumber() {
+function AddPositiveValueOfTheNumber({ result }) {
   return (
-    <section>
+    <div class="container">
       <h2 id="negativeValueOfTheNumber" className="negativeValueOfTheNumber">
-        " "
+        {result}
       </h2>
-    </section>
+    </div>
   );
 }
+
 export default AddPositiveValueOfTheNumber;
