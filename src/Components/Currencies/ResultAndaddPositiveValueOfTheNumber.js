@@ -1,6 +1,6 @@
 function AddPositiveValueOfTheNumber({ result }) {
   return (
-    <div class="container">
+    <div className="container">
       <h2 id="negativeValueOfTheNumber" className="negativeValueOfTheNumber">
         {result}
       </h2>
