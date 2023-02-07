@@ -3,8 +3,8 @@ import ApiCurency from "./Services/ApiCurrency";
 import InputCurrency from "./Input";
 import SelectCurrency from "./Currencies/SelectCurrency";
 import ButtonGetCurrency from "./Button/ButtonGetCurrency";
-import AddPositiveValueOfTheNumber from "./Currencies/ResultAndaddPositiveValueOfTheNumber";
 import Preloader from "./Preloader/Loader";
+import AddPositiveValueOfTheNumber from "./Currencies/ResultAndaddPositiveValueOfTheNumber";
 
 const initialState = "EUR";
 
