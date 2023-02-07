@@ -10,9 +10,9 @@ const initialState = "EUR";
 
 function FormCurrency() {
   const [selectValue, setSelectValue] = useState(initialState);
-  const [currencyNumber, setCurrencyNumber] = useState();
+  const [currencyNumber, setCurrencyNumber] = useState(" ");
   const [dataState, setDataState] = useState([]);
-  const [showResult, setShowResult] = useState("");
+  const [showResult, setShowResult] = useState(" ");
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
