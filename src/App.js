@@ -1,5 +1,5 @@
-import Header from "./Components/Header";
-import FormCurrency from "./Components/FormCurrency";
+import Header from "./Components/Header/Header";
+import FormCurrency from "./Components/FormCurrency/FormCurrency";
 
 function App() {
   return (

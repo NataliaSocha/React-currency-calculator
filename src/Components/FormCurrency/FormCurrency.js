@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import ApiCurency from "./Services/ApiCurrency";
-import InputCurrency from "./Input";
-import SelectCurrency from "./Currencies/SelectCurrency";
-import ButtonGetCurrency from "./Button/ButtonGetCurrency";
-import Preloader from "./Preloader/Loader";
-import AddPositiveValueOfTheNumber from "./Currencies/ResultAndaddPositiveValueOfTheNumber";
+import ApiCurency from "../../Services/ApiCurrency";
+import InputCurrency from "../Input/InputCurrency";
+import SelectCurrency from "../Currencies/SelectCurrency";
+import ButtonGetCurrency from "../Button/ButtonGetCurrency";
+import Preloader from "../Preloader/Loader";
+import AddPositiveValueOfTheNumber from "../Result/ResultAndaddPositiveValueOfTheNumber";
 
 const initialState = "EUR";
 
@@ -25,7 +25,7 @@ function FormCurrency() {
 
   const handleClick = () => {
     setLoading(true);
-    if (currencyNumber < 0) {
+    if (currencyNumber <= 0) {
       setShowResult("dodaj wartość dodatnią");
       setLoading(false);
     } else {
