@@ -1,4 +1,4 @@
-function AddPositiveValueOfTheNumber({ result }) {
+function Result({ result }) {
   return (
     <div className="container">
       <h2 id="negativeValueOfTheNumber" className="negativeValueOfTheNumber">
@@ -8,4 +8,4 @@ function AddPositiveValueOfTheNumber({ result }) {
   );
 }
 
-export default AddPositiveValueOfTheNumber;
+export default Result;

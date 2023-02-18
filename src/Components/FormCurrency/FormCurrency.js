@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import ApiCurency from "../../Services/ApiCurrency";
-import InputCurrency from "../Input/InputCurrency";
+import getCurrencies from "../../Services/getCurrencies";
+import Input from "../Input/Input";
 import SelectCurrency from "../Currencies/SelectCurrency";
-import ButtonGetCurrency from "../Button/ButtonGetCurrency";
+import Button from "../Button/Button";
 import Preloader from "../Preloader/Loader";
-import AddPositiveValueOfTheNumber from "../Result/ResultAndaddPositiveValueOfTheNumber";
+import Result from "../Result/Result";
 
-const initialState = "EUR";
+const initialState = "wybierz walutę";
 
 function FormCurrency() {
   const [selectValue, setSelectValue] = useState(initialState);
@@ -16,34 +16,52 @@ function FormCurrency() {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    ApiCurency().then((res) => setDataState(res.data[0].rates));
+    setCurrencies();
   }, []);
 
   const handleChange = (e) => {
     setSelectValue(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleChangeInput = (e) => {
+    setCurrencyNumber(e.target.value);
+  };
+
+  const setCurrencies = async () => {
     setLoading(true);
-    if (currencyNumber <= 0) {
-      setShowResult("dodaj wartość dodatnią");
+    try {
+      const res = await getCurrencies();
+      setDataState(res[0].rates);
+    } catch (err) {
+      console.log(err);
+    } finally {
       setLoading(false);
-    } else {
-      setTimeout(() => {
-        setLoading(false);
-        const currRate = dataState.find((item) => item.code === selectValue);
-        const result = `${(currencyNumber * currRate.mid).toFixed(2)}  PLN`;
-        setShowResult(result);
-      }, 2000);
     }
+  };
+
+  const setResultCurrencies = () => {
+    if (currencyNumber <= 0 || currencyNumber === " ") {
+      setShowResult("dodaj wartość dodatnią");
+    } else if (selectValue === "wybierz walutę") {
+      setShowResult("wybierz walutę");
+    } else {
+      const currRate = dataState.find((item) => item.code === selectValue);
+      const result = `${(currencyNumber * currRate.mid).toFixed(2)}  PLN`;
+      setShowResult(result);
+    }
+  };
+
+  const handleClick = () => {
+    setCurrencies();
+    setResultCurrencies();
   };
 
   return (
     <>
       <div className="content">
-        <InputCurrency
+        <Input
           currencyNumber={currencyNumber}
-          setCurrencyNumber={setCurrencyNumber}
+          handleChangeInput={handleChangeInput}
         />
         <SelectCurrency
           handleChange={handleChange}
@@ -51,9 +69,9 @@ function FormCurrency() {
           dataState={dataState}
         />
       </div>
-      <ButtonGetCurrency handleClick={handleClick} />
+      <Button handleClick={handleClick} />
       <Preloader isLoading={isLoading} />
-      <AddPositiveValueOfTheNumber result={showResult} />
+      <Result result={showResult} />
     </>
   );
 }

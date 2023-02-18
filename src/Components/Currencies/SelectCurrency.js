@@ -1,7 +1,4 @@
-import React from "react";
-
 function SelectCurrency({ dataState, handleChange, selectValue }) {
-  if (!dataState) return " ";
   return (
     <select
       id="currencyValue"
@@ -10,11 +7,12 @@ function SelectCurrency({ dataState, handleChange, selectValue }) {
       value={selectValue}
       onChange={handleChange}
     >
+      <option selected>wybierz walutę</option>
       {dataState
         .filter((item) => ["USD", "EUR", "CHF"].includes(item.code))
         .map((item) => (
           <option key={item.code} value={item.code}>
-            <span className="currency">{item.code}</span>
+            <span className="currency">{item.code} 💵</span>
           </option>
         ))}
     </select>

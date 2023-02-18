@@ -1,13 +1,13 @@
-function InputCurrency({ currencyNumber, setCurrencyNumber }) {
+function Input({ currencyNumber, handleChangeInput }) {
   return (
     <input
       id="inputCurrency"
       className="inputCurrency"
       type="number"
       placeholder="wpisz kwotę"
-      onChange={(e) => setCurrencyNumber(e.target.value)}
+      onChange={handleChangeInput}
       value={currencyNumber}
     />
   );
 }
-export default InputCurrency;
+export default Input;

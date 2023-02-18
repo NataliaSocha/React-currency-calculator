@@ -3,7 +3,7 @@ import FormCurrency from "./Components/FormCurrency/FormCurrency";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <FormCurrency />
     </div>

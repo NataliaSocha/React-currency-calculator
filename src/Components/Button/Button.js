@@ -1,6 +1,4 @@
-import React from "react";
-
-function ButtonGetCurrency({ handleClick, id }) {
+function Button({ handleClick, id }) {
   return (
     <div className="container">
       <button id={id} className="getCurrencies" onClick={handleClick}>
@@ -10,4 +8,4 @@ function ButtonGetCurrency({ handleClick, id }) {
   );
 }
 
-export default ButtonGetCurrency;
+export default Button;
