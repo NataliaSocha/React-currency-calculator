@@ -54,6 +54,7 @@ function FormCurrency() {
   const handleClick = () => {
     setCurrencies();
     setResultCurrencies();
+    handleChangeInput();
   };
 
   return (
