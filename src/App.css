@@ -92,7 +92,7 @@ body {
   background-color: rgb(247, 190, 247);
 }
 
-.negativeValueOfTheNumber {
+.result {
   color: var(--text-color);
   font-size: 25px;
   font-weight: bold;

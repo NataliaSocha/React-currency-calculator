@@ -10,9 +10,9 @@ const initialState = "wybierz walutę";
 
 function FormCurrency() {
   const [selectValue, setSelectValue] = useState(initialState);
-  const [currencyNumber, setCurrencyNumber] = useState(" ");
+  const [currencyNumber, setCurrencyNumber] = useState("");
   const [dataState, setDataState] = useState([]);
-  const [showResult, setShowResult] = useState(" ");
+  const [showResult, setShowResult] = useState("");
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ function FormCurrency() {
       const res = await getCurrencies();
       setDataState(res[0].rates);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     } finally {
       setLoading(false);
     }

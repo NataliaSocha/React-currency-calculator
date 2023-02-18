@@ -7,7 +7,7 @@ function SelectCurrency({ dataState, handleChange, selectValue }) {
       value={selectValue}
       onChange={handleChange}
     >
-      <option selected>wybierz walutę</option>
+      <option>wybierz walutę</option>
       {dataState
         .filter((item) => ["USD", "EUR", "CHF"].includes(item.code))
         .map((item) => (
