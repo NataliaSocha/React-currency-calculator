@@ -1,6 +1,8 @@
 body {
   background-image: url(./Assets/hell.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 :root {
